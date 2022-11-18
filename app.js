@@ -41,7 +41,9 @@ Book.prototype.elementRemover = function () {
 }
 
 function listenAdder(ele) {
+    console.log('listener on '+ele);
     document.querySelector('#rb-'+ele).addEventListener('click', () => {
+        document.querySelector('#rb-'+ele).style.backgroundColor = 'hotpink';
         console.log('clicked');
         document.querySelector('#'+ele).remove();
     })

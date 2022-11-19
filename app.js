@@ -29,15 +29,9 @@ function Book(name, author, page, read) {
         <p>${this.read}</p>
         <button class="remove-button" id="rb-${this.id}">Remove button</button>
     </div>`
-   
-}
 
-Book.prototype.elementRemover = function () {
     listenAdder(this.id);
-    // document.querySelector('#rb-'+this.id).addEventListener('click', () => {
-    //     console.log('remov');
-    //     document.querySelector('#'+this.id).remove();
-    // })
+   
 }
 
 function listenAdder(ele) {
@@ -46,7 +40,8 @@ function listenAdder(ele) {
         document.querySelector('#rb-'+ele).style.backgroundColor = 'hotpink';
         console.log('clicked');
         document.querySelector('#'+ele).remove();
-    })
+    });
+    document.querySelector('#'+ele).style.backgroundColor = 'black';
 }
 
 Book.prototype.readit = function() {
